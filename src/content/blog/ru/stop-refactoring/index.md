@@ -7,14 +7,14 @@ description: "Работая над одним проектом продолжи
 рациональное решение - переписать все... А можно ли писать код, не переписывая его в будущем или хотя бы отложить этот
 момент на более долгий срок?"
 pubDate: "Feb 23 2021"
-heroImage: "/ru/blog/stop-refactoring-resources/header.png"
+heroImage: "/ru/blog/header.png"
 ---
 # Стоп рефакторинг. Kotlin. Android
 
 ### Введение
 
 <p align="center">
-  <img src="stop-refactoring-resources/header.png" />
+  <img src="header.png" />
 </p>
 Работая над одним проектом продолжительное время, я заметил как приходится переписывать код, который еще три месяца
 назад казался хорошим. Инженерам поступают новые требования, когда они не пересекаются с предыдущими - все отлично,
@@ -59,7 +59,7 @@ fun getNumberSign(num: Int): String = when {
 вооружение. Одна из самых популярных причин его игнорирования - "Не привычно…"
 
 <p align="center">
-  <img src="stop-refactoring-resources/it-used-to-be-better.png" />
+  <img src="it-used-to-be-better.png" />
 </p>
 
 Дело не в предпочтениях стилистики писания: семистопный дактиль или пятистопный хорей. Дело в том, что в Kotlin
@@ -89,7 +89,7 @@ data class Message(
 оконченный постулат, который нельзя нарушить?
 
 <p align="center">
-  <img src="stop-refactoring-resources/two-hours-later.png" />
+  <img src="two-hours-later.png" />
 </p>
 
 > 2. Пользователь должен иметь возможность видеть прочитано сообщение или нет
@@ -302,7 +302,7 @@ enum class ConfigKey(val key) {
 затронуть еще 20 компонентов приложения. Хм, и как поможет абстракция?
 
 <p align="center">
-  <img src="stop-refactoring-resources/its-easy.png" />
+  <img src="its-easy.png" />
 </p>
 
 Завернем под абстракцию хранлище ключей и создадим имплементацию: InMemory / SharedPreferences / Database /
@@ -356,7 +356,7 @@ internal class InMemoryConfigKeyStorage : ConfigKeyStorage {
 через неделю ты будешь стахановцем без привычного смузи.
 
 <p align="center">
-  <img src="stop-refactoring-resources/kiss.png" />
+  <img src="kiss.png" />
 </p>
 
 В очередной раз возьмем пример технического задания:
@@ -441,7 +441,7 @@ sealed class UsernameState {
 на следующий экран.
 
 <p align="center">
-  <img src="stop-refactoring-resources/block-scheme.png" />
+  <img src="block-scheme.png" />
 </p>
 
 ```kotlin
@@ -652,7 +652,7 @@ class PhoneNumberValidator : Validator {
 Пришло обновление задачи, когда на экране N вместо [MSISDN](https://ru.wikipedia.org/wiki/MSISDN) необходимо 
 использовать [E.164](https://ru.wikipedia.org/wiki/E.164):
 <p align="center">
-  <img src="stop-refactoring-resources/wat-again.png" />
+  <img src="wat-again.png" />
 </p>
 
 ```kotlin

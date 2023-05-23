@@ -7,14 +7,14 @@ code without refactoring or, at least, put it off for a long period? I want to t
 projects.
 "
 pubDate: "Feb 23 2021"
-heroImage: "/en/blog/stop-refactoring-resources/header.png"
+heroImage: "/en/blog/header.png"
 ---
 # Stop refactoring. Kotlin. Android.
 
 ## Intro
 
 <p align="center">
-  <img src="stop-refactoring-resources/header.png" />
+  <img src="header.png" />
 </p>
 When I was working on one project for a long time, I noticed how I had to refactor the code that seemed good three
 months ago. Engineers receive new requirements, add new classes and run forward. But the very moment comes when the cost
@@ -292,7 +292,7 @@ problem, we can store it InMemory. And by the same strategy, we have to fix it i
 abstraction can help us?
 
 <p align="center">
-  <img src="stop-refactoring-resources/its-easy.png" />
+  <img src="its-easy.png" />
 </p>
 
 What if we wrap configuration keys to abstraction and create implementation:
@@ -344,7 +344,7 @@ Developers are lazy people. Professional deformation allows you to make relaxed 
 everyone. Often, the first and fast solution - the best solution. But, please don't take it literally.
 
 <p align="center">
-  <img src="stop-refactoring-resources/kiss.png" />
+  <img src="kiss.png" />
 </p>
 
 > Prepare a repository to provide a username to the display.
@@ -425,7 +425,7 @@ sealed class UsernameState {
 Let's see the next example. Start of the application depending on the state, you need to go to the next screen.
 
 <p align="center">
-  <img src="stop-refactoring-resources/block-schema.png" />
+  <img src="block-schema.png" />
 </p>
 
 ```kotlin

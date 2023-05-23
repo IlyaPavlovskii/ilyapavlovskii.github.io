@@ -73,7 +73,7 @@ heroImage: "/ru/blog/shooting-sport-resources/pic3.jpeg"
 
 Я зашел на [википедию](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B5%D0%BB%D1%8C%D0%B1%D0%B0) почитать на это тему и…. Кароч - стреляем БЕЗОПАСНО, быстро и метко. Все!  (там даже нету поинта про калькуляцию очков при стрельбе и хит фактор)
 
-![Untitled](shooting-sport-resources/pic2.png)
+![Shield](shooting-sport-resources/ipsc_shield.webp)
 
 Мишень делиться на 3 основные зоны:
 
@@ -98,7 +98,7 @@ heroImage: "/ru/blog/shooting-sport-resources/pic3.jpeg"
 
 Все в целом похоже, но есть нюанс… Тут нету поощрительных баллов - есть карательные балы. Отличие в чем - в IPSC - ты стреляешь как хотишь, в IDPA - из укрытия. 
 
-![Untitled](shooting-sport-resources/pic4.png)
+![pic4.webp](shooting-sport-resources/idpa_shield.webp)
 
 Очки здесь считаются чуть проще. К итоговому времени прибавляются штрафные баллы - у кого меньше итоговый результат тот и победил. Это коротко, но на самом деле, там тоже есть большое количество разновидностей, вот [здесь](http://www.pmrpcidpa.com/documents/IDPA_Scoring.pdf) есть хорошая короткая книжечка с подробностями.
 

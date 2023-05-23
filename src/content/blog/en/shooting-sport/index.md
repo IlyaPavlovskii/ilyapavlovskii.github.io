@@ -60,7 +60,7 @@ These are the two main categories of sport shooting. The difference is that in I
 
 I went to [Wikipedia](https://en.wikipedia.org/wiki/International_Practical_Shooting_Confederation) to read about this topic and...well, in short, we shoot safely, fast, and accurately. That's it!
 
-![ipsc_shield.webp](shooting-sport-resources%2Fipsc_shield.webp)
+![ipsc_shield.webp](ipsc_shield.webp)
 
 The target is divided into three main zones:
 **A - Alpha** - 5 points
@@ -80,7 +80,7 @@ Mr. John Wick hit the target as quickly as possible, but with poor accuracy, and
 
 Everything in general is similar, but there is a nuance ... There are no incentive points here - there are punitive balls. The difference is - in IPSC - you shoot as you want, in IDPA - from cover.
 
-![idpa_shield.webp](shooting-sport-resources%2Fidpa_shield.webp)
+![idpa_shield.webp](idpa_shield.webp)
 
 Scoring is a bit simpler here. Penalty points are added to the final time, and the one with the lower score wins. Although, there are many variations and there is a good short book with details. The difference between these disciplines is quite big - in IDPA there are cover positions (you are not allowed to expose more than 50% of your body, your feet must be behind cover when standing), penalty plates (floor plates you can't step on), etc. Penalties are added for each violation. You can't modify your weapon - no modifications, such as compensators, muzzle brakes, etc. I haven't reached IDPA yet because I don't shoot accurately and fast enough from my main weapon. Once I learn the nuances of pistol shooting (I think I'm ready), shotgun (a couple of trainings and I'll be ready), and carbine (I consider myself a complete beginner with no meaningful accuracy, although it's considered the easiest weapon), I'll get there.
 

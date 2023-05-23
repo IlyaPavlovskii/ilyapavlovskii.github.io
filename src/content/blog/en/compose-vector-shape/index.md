@@ -2,7 +2,7 @@
 title: "Making a Custom Shape Widget on Jetpack Compose Using Figma and AndroidVectors"
 description: "I recently shared my thoughts on my new hobby - shooting sport. After some practice, I became interested in tracking and saving my results. I started looking for an application that close my problem and… found a few applications that can’t fully close all my requirements. And another problem - bad UX. All applications can track IPSC points by manually entering them manually by EditText or clicking on the plus/minus buttons. Why can’t it be an IPSC shield? I decided to close this problem and write my own application for calculating the hit factor in IPSC competitions."
 pubDate: "Mar 27 2023"
-heroImage: "/en/blog/compose-vector-shape-resources/shield.png"
+heroImage: "/en/blog/compose-vector-shape/shield.png"
 ---
 # Making a Custom Shape Widget on Jetpack Compose Using Figma and AndroidVectors
 
@@ -12,7 +12,7 @@ I recently shared my thoughts on my new hobby - shooting sport. After some pract
 
 Create an IPSC shield widget with a clickable area by sectors alpha, charlie, and delta. Calculate total points by clicking on the widget (click on alpha gives 5 points, charlie - 3, and delta - 1).
 
-![shield](compose-vector-shape-resources/shield.png)
+![shield](shield.png)
 
 ## Solution
 
@@ -20,13 +20,13 @@ I decided to write this project on modern practices and choose [jetpack compose]
 
 Framework has the same solution - [drawings on canvas](https://developer.android.com/jetpack/compose/graphics/draw/overview). Yes, it is possible, but if we research a little bit more, we might find a better solution. What if it is possible to create 3 different buttons with a custom shape and overlay it? And yes, [compose has it](https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.material.ButtonElevation,androidx.compose.ui.graphics.Shape,androidx.compose.foundation.BorderStroke,androidx.compose.material.ButtonColors,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)).
 
-![button](compose-vector-shape-resources/button.png)
+![button](button.png)
 
 All that we need - just put a custom shape as an argument to the button.
 
 Let’s look again and try to split all layers of the shield.
 
-![layers](compose-vector-shape-resources/layers.png)
+![layers](layers.png)
 
 The `Shape` has a lot of implementation variation. In my case, I have to use `GenericShape`:
 
@@ -176,7 +176,7 @@ VERTICAL_LINE_TO(
 
 Full [gist here](https://gist.github.com/IlyaPavlovskii/4bee00442263622e6250a60ae03491a3). 
 
-![Shield example](compose-vector-shape-resources/shield-example.gif)
+![Shield example](shield-example.gif)
 
 ## Conclusions
 

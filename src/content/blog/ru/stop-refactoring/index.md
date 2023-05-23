@@ -7,7 +7,7 @@ description: "Работая над одним проектом продолжи
 рациональное решение - переписать все... А можно ли писать код, не переписывая его в будущем или хотя бы отложить этот
 момент на более долгий срок?"
 pubDate: "Feb 23 2021"
-heroImage: "/ru/blog/header.png"
+heroImage: "/ru/blog/stop-refactoring/header.png"
 ---
 # Стоп рефакторинг. Kotlin. Android
 

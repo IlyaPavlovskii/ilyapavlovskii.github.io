@@ -7,7 +7,7 @@ code without refactoring or, at least, put it off for a long period? I want to t
 projects.
 "
 pubDate: "Feb 23 2021"
-heroImage: "/en/blog/header.png"
+heroImage: "/en/blog/stop-refactoring/header.png"
 ---
 # Stop refactoring. Kotlin. Android.
 

@@ -2,7 +2,7 @@
 title: "Готовим FeatureToggle для Android"
 description: "Почти три года назад, мы начали свой проект в сфере финтех. Срок запуска MVP был оптимистичным. За неделю до наступления дедлайна наша команда осознала, что срок запуска переносить никто не собирается, а одна фича вряд ли будет закончена вовремя. Рисковать не хотелось и было решено - прикрыть эту часть заглушкой. Блокируя часть нерабочей функциональности, мы питали надежды, что скоуп MVP будет закрыт. По-этому, выключить нерабочий код хотели так, чтобы по щелчку кнопки CI/Web экран стал доступен для пользователя."
 pubDate: "Jan 08 2023"
-heroImage: "/ru/blog/feature-toggle-resources/dev-qa-prod.png"
+heroImage: "/ru/blog/feature-toggle/dev-qa-prod.png"
 ---
 
 # Готовим FeatureToggle для Android
@@ -37,7 +37,7 @@ heroImage: "/ru/blog/feature-toggle-resources/dev-qa-prod.png"
   на [TBD](https://trunkbaseddevelopment.com/). Без форсирования функциональности, сделать это будет не так-то просто.
 
 <p align="center">
-    <img src="feature-toggle-resources/plate.svg" alt="Пока мы не поднимем крышку, мы не будем знать что на сковородке"/>
+    <img src="plate.svg" alt="Пока мы не поднимем крышку, мы не будем знать что на сковородке"/>
 </p>
 
 - [A/Б тестирование](https://en.wikipedia.org/wiki/A/B_testing)
@@ -52,14 +52,14 @@ heroImage: "/ru/blog/feature-toggle-resources/dev-qa-prod.png"
   критерии успеха эксперимента и условия, при которых эксперимент стоит прекратить.
 
 <p align="center">
-    <img src="feature-toggle-resources/okroshka_1.svg" />
+    <img src="okroshka_1.svg" />
 </p>
 
 - Не обязательно иметь только 2 условия для проведения эксперимента. Гипотеза может содержать множество входных данных и
   исходов.
 
 <p align="center">
-    <img src="feature-toggle-resources/kotlette.svg" alt="Окрошка на кефире или на квасе? а побеждает пюрешка с котлеткой" />
+    <img src="kotlette.svg" alt="Окрошка на кефире или на квасе? а побеждает пюрешка с котлеткой" />
 </p>
 
 - Обычно, анализ данных выполняется на той стороне, которая ответственна за их выдачу. В нашем случае это будет backend,
@@ -83,8 +83,8 @@ heroImage: "/ru/blog/feature-toggle-resources/dev-qa-prod.png"
 ### Схема продвижения фичи по процессу
 
 <p align="center">
-    <img src="feature-toggle-resources/delivery-lifetime-scheme.png" alt="Схема продвижения фичи по процессу" />
-    <img src="feature-toggle-resources/dev-qa-prod.png"/>
+    <img src="delivery-lifetime-scheme.png" alt="Схема продвижения фичи по процессу" />
+    <img src="dev-qa-prod.png"/>
 </p>
 
 ## Как приготовить?
@@ -157,7 +157,7 @@ ServiceLocator или что там у вас) фреймворка. В прот
 зависимостей на лету. Пример возможной ситуации:
 
 <p align="center">
-    <img src="feature-toggle-resources/recipe.svg"/>
+    <img src="recipe.svg"/>
 </p>
 
 На картинке окрошка на квасе, а получили меню окрошки на кефире
@@ -173,7 +173,7 @@ ServiceLocator или что там у вас) фреймворка. В прот
 ## Состав лазаньи
 
 <p align="center">
-    <img src="feature-toggle-resources/lasagne.png"/>
+    <img src="lasagne.png"/>
 </p>
 
 1. **FeatureToggleContainer**
@@ -240,7 +240,7 @@ FeatureToggleContainerHolder.init(featureToggleContainer)
 Перегружаем тоглер с ключом `sample_title` и изменяем у него шапку.
 
 <p align="center">
-    <img src="feature-toggle-resources/sample.jpeg"/>
+    <img src="sample.jpeg"/>
 </p>
 
 1. **Remote config.**
@@ -270,7 +270,7 @@ FirebaseFeatureToggleReader(
 десериализатор и конфиг по умолчанию(см. пункт 2). И дальше играемся с Web интерфейсом и пробуем наши настройки в бою.
 
 <p align="center">
-    <img src="feature-toggle-resources/firebase-remote-config.png"/>
+    <img src="firebase-remote-config.png"/>
 </p>
 
 1. **Debug file config**
@@ -305,7 +305,7 @@ XmlFileFeatureToggleReader(
 даст возможность его модификации на телефоне с GUI и без SMS.
 
 <p align="center">
-    <img src="feature-toggle-resources/debug-panel-sample.jpeg"/>
+    <img src="debug-panel-sample.jpeg"/>
 </p>
 
 Добавляем еще 2 кнопки - сохранить и очистить конфиг, чтобы всегда могли вернуться к началу. Делаем ремарку того, что

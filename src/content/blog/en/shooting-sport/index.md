@@ -2,7 +2,7 @@
 title: "Shooting sport or a new hobby"
 description: "I want to talk about my new interesting hobby - shooting sports. The appetite comes with eating. That's how it happened with this hobby. I got introduced to it quite unexpectedly. Once upon a time, I suggested going to a shooting range, and we started talking with the instructor and he suggested going for dynamic shooting, then..."
 pubDate: "Nov 11 2022"
-heroImage: "/en/blog/shooting-sport-resources/calculator.png"
+heroImage: "/en/blog/shooting-sport/calculator.png"
 ---
 # Shooting sport or a new hobby
 
@@ -18,7 +18,7 @@ Everything that is not prohibited is allowed, but there are restrictions. To ent
 
 A shooting range is a static lane. You are standing in a static position, next to a tough instructor, and you shoot at a depth of 10 to 25 meters. The fun is that you have a limited number of bullets from each weapon, and then you check your accuracy. Hit all the bullets in the target - well done, no - loser.
 
-![Untitled](shooting-sport-resources/Untitled.png)
+![Untitled](Untitled.png)
 
 If you're not bored and want to try, take a package at shooting ranges. They are not created for nothing - it's like a one-time gym permit. Everything progressively, if it doesn't work out, you'll figure it out in the middle, or tomorrow. If you're still in doubt the next day, you definitely need to go to a dynamic line.
 
@@ -72,7 +72,7 @@ Time is recorded for each checkpoint. Then we add up all the points and divide b
 
 E.g:
 
-![Untitled](shooting-sport-resources/calculator.png)
+![Untitled](calculator.png)
 
 Mr. John Wick hit the target as quickly as possible, but with poor accuracy, and Leon, who took aim at the target for a long time, received the maximum number of points, but lost because he spent too much time on it.
 

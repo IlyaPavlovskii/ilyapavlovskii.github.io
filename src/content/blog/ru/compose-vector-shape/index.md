@@ -2,7 +2,7 @@
 title: "Делаем виджет с кастомной формой на Jetpack Compose с помощью Figma и AndroidVectors."
 description: "Недавно я делился своими мыслями о своем новом увлечении - стрелковый спорт. Погружаясь в дело, стало интересно отслеживать свой результат. Изучая тему, я столкнулся с тем, что приложений для трекинга не так уж много и они не покрывают необходимую мне функциональность. А самое главное - у них очень плохой UX. Все приложения предлагают вбивать очки вручную через input field, либо через кнопочки. А почему бы не сделать приложение, где в качестве input widget будет выступать сама мишень? Именно с решением такой проблемы я решил закрыть тему удобства для себя и написать приложение для подсчета hit factor в IPSC соревнованиях."
 pubDate: "Mar 27 2023"
-heroImage: "/ru/blog/compose-vector-shape-resources/shield.png"
+heroImage: "/ru/blog/compose-vector-shape/shield.png"
 ---
 # Делаем виджет с кастомной формой на Jetpack Compose с помощью Figma и AndroidVectors.
 
@@ -12,7 +12,7 @@ heroImage: "/ru/blog/compose-vector-shape-resources/shield.png"
 
 Создать виджет IPSC мишени с кликабельными зонами в альфа, чарли и дельта зонах, по клику на которые будут зачисляться очки - 5,3,1 соответственно. Штрафные баллы отличаются только классификацией, так что их можно оставить просто кнопками.
 
-![Untitled](compose-vector-shape-resources/shield.png)
+![Untitled](shield.png)
 
 ## Решения
 
@@ -20,13 +20,13 @@ heroImage: "/ru/blog/compose-vector-shape-resources/shield.png"
 
 Да, у него тоже есть свободное рисование через [Canvas](https://developer.android.com/jetpack/compose/graphics/draw/overview). Но изначально задача стоит немного другая - нужны 3 кликабельные кнопки различной формы. Те нужно создать кнопки наложенные друг на друга. И такая возможность [есть у compose](https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#Button(kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.foundation.interaction.MutableInteractionSource,androidx.compose.material.ButtonElevation,androidx.compose.ui.graphics.Shape,androidx.compose.foundation.BorderStroke,androidx.compose.material.ButtonColors,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)). 
 
-![Untitled](compose-vector-shape-resources/button.png)
+![Untitled](button.png)
 
 Все что нам нужно - определить свою фигуру и передать ее в качестве аргумента нашей кнопке. 
 
 Если взглянем еще раз на исходные данные, все что нам нужно - создать 3 различные формы и отдать их на сьедение кнопкам:
 
-![layers](compose-vector-shape-resources/layers.jpeg)
+![layers](layers.jpeg)
 
 У `Shape` есть различное количество вариаций для имплементаций. В моем же случае требуется найти то, в которую можно передать кривую/полигон - `GenericShape`:
 
@@ -168,7 +168,7 @@ VERTICAL_LINE_TO(
 
 Полный [gist](https://gist.github.com/IlyaPavlovskii/4bee00442263622e6250a60ae03491a3).
 
-![Shield example](compose-vector-shape-resources/shield-example.gif)
+![Shield example](shield-example.gif)
 
 ## Заключение
 

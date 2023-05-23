@@ -2,7 +2,7 @@
 title: "FeatureToggle recipe for Android"
 description: "Almost three years ago, we started our fintech project. MVP deadline was very optimistic. A week before the release, our team realized that no one was going to postpone the start date, and one feature was unlikely to be completed on time. We didn’t want to take risks and it was decided to cover this part with a stub. By blocking part of the non-working functionality, we had hopes that the MVP scope would be closed. We planned to disable non-working code so that at the click of the CI / Web button, the screen became available to the user."
 pubDate: "Jan 08 2023"
-heroImage: "/en/blog/feature-toggle-resources/dev-qa-prod.png"
+heroImage: "/en/blog/feature-toggle/dev-qa-prod.png"
 ---
 # FeatureToggle recipe for Android
 
@@ -23,18 +23,18 @@ Feature toggle basis - possibility to switch features according to the condition
 With this tool, you can switch from [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) to [TBD](https://trunkbaseddevelopment.com/)(IMO, without FeatureToggle it is impossible)
 
 <p align="center">
-    <img src="feature-toggle-resources/pan.svg" alt="Until we lift the lid, we won't know what's in the pan."/>
+    <img src="pan.svg" alt="Until we lift the lid, we won't know what's in the pan."/>
 </p>
 
 - **[A/B testing](https://en.wikipedia.org/wiki/A/B_testing)**
 Let’s suppose that we have a hypothesis, that all users love to eat burgers. But, our manager doesn’t think so. In his opinion, all users love hot-dogs. And only the target user will help us to resolve this dispute. Ok, we might create a questionnaire on the main page or open a [marketing company](https://firebase.google.com/docs/projects/iam/overview). But it will be so distracting to user and it will be impossible to create and manage many hypotheses. A/B testing it’s a solution that might solve that problem invisibly to user.
 Just split our users into 2 groups: burger lovers and hot-dog lovers. All clicks to the food banner have to be marked with analytics events. In advance with the manager the criteria for the success of the experiment and the conditions under which the experiment should be stopped. Then all clicks to the burger banner are put into the burger-analytics-event bucket, and the same story with hot-dog.
 <p align="center">
-    <img src="feature-toggle-resources/burger-hot-dog.svg"/>
+    <img src="burger-hot-dog.svg"/>
 </p> 
 It is not necessary to have only 2 conditions for the experiment. A hypothesis can contain multiple inputs and outcomes.
 <p align="center">
-    <img src="feature-toggle-resources/pizza.svg"/>
+    <img src="pizza.svg"/>
 </p> 
 Usually, data analysis is performed on the side that is responsible for issuing them. In our case, this will be the **backend**, and the client developers paint the buttons. It is only an example. The more realistic picture for the client story - is how that banner will be represented: vertical list, horizontal list, grid layout or custom big banner. 
     
@@ -46,8 +46,8 @@ If we have a possibility to disable one part of the code by feature flag, we mig
 The same behavior awaits the next chain - internal,alpha, beta, release.
 
 <p align="center">
-    <img src="feature-toggle-resources/process-movement-scheme.png"/>
-    <img src="feature-toggle-resources/dev-qa-prod.png"/>
+    <img src="process-movement-scheme.png"/>
+    <img src="dev-qa-prod.png"/>
 </p>
 
 ## How to cook?
@@ -90,7 +90,7 @@ To solve that problem, write additional activity with custom edit-type block: st
 The previously described methods fit perfectly into the structure when your flags are up to date at the time your application process starts. The target `FeatureToggle` configuration collects BEFORE IoC(DependencyIjection or ServiceLocator) framework initialization. Otherwise, we have to solve the problem with dynamic feature switching.
 
 <p align="center">
-    <img src="feature-toggle-resources/recipe.svg"/>
+    <img src="recipe.svg"/>
 </p>
 
 Pictured is a burger but got a hot dog menu
@@ -102,7 +102,7 @@ Lasagna
 
 ## Lasagna recipe
 <p align="center">
-    <img src="feature-toggle-resources/lasagne.png"/>
+    <img src="lasagne.png"/>
 </p>
 
 1 **FeatureToggleContainer** 
@@ -147,7 +147,7 @@ Looking ahead, the remote config is based on `Firebase`. It has a default config
 ```
 Overriding title key with a value `Sample Resources config Title` and open our build:
 <p align="center">
-    <img src="feature-toggle-resources/sample.jpeg"/>
+    <img src="sample.jpeg"/>
 </p>
 3 **Remote config**
 Remote type of flag delivery. Designed for emergency control on rollouted builds. The main idea is to control, when exchanging the flag with rollout a new version is very expensive and need to additional developers, QA and manager team, you have to use that type of control. Or, for A/B testing)
@@ -162,7 +162,7 @@ FirebaseFeatureToggleReader(
 ```
 Set the settings for `FirebaseFeatureToggleReader` - timeout and minimum interval for downloading a new file, deserializer and default config (see point 2). Then, started to play with Web interface:
 <p align="center">
-    <img src="feature-toggle-resources/firebase-remote-config.png"/>
+    <img src="firebase-remote-config.png"/>
 </p>
 4 **Debug file config**
 The first three layers are necessary as an MVP set for target users. Then we have to prepare set for developers and QA team. Let’s prepare a backdoor to force it via a configuration file. And don’t forget to hide it by a `flavor` type, for Dev and QA(not for production).
@@ -179,7 +179,7 @@ It is necessary, cause not all features might be ready for production/ payable f
 5 **Debug panel**
 The last is candy. An editable file is good, but to edit it faster we need to have a laptop. To solve that problem we prepared a debug panel activity. It’s an additional activity that is hidden under the hood as a launcher(if you want to see another way of representation, please let me now or create a separate issue on the github).
 <p align="center">
-    <img src="feature-toggle-resources/debug-panel-sample.jpeg"/>
+    <img src="debug-panel-sample.jpeg"/>
 </p>
 Add 2 buttons: drop config and save, to have the possibility to rollback to the native setup at any time. We make a remark that the whole system works with a static config. Therefore, to apply it, you will need to restart the main application.
 ```kotlin

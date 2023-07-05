@@ -6,6 +6,11 @@ heroImage: "/en/blog/compose-vector-shape/shield.png"
 ---
 # Making a Custom Shape Widget on Jetpack Compose Using Figma and AndroidVectors
 
+<a target="_blank" 
+href="https://pavlovskiiilia.medium.com/making-a-custom-shape-widget-on-jetpack-compose-using-figma-and-androidvectors-ef264fc3e3de">
+    <img alt="linkedin" src="/medium.svg"/>
+</a>
+
 I recently shared my thoughts on my new hobby - shooting sport. After some practice, I became interested in tracking and saving my results. I started looking for an application that close my problem and… found a few applications that can’t fully close all my requirements. And another problem - bad UX. All applications can track IPSC points by manually entering them manually by EditText or clicking on the plus/minus buttons. Why can’t it be an IPSC shield? I decided to close this problem and write my own application for [calculating the hit factor in IPSC competitions.](https://play.google.com/store/apps/details?id=by.bulba.ipsc.calculator)
 
 ## Problem

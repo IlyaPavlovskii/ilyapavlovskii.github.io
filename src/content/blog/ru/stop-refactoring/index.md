@@ -11,6 +11,10 @@ heroImage: "/ru/blog/stop-refactoring/header.png"
 ---
 # Стоп рефакторинг. Kotlin. Android
 
+<a target="_blank" href="https://habr.com/ru/articles/543830/">
+<img alt="linkedin" src="/habr.svg"/>
+</a>
+
 ### Введение
 
 <p align="center">

@@ -6,6 +6,10 @@ heroImage: "/en/blog/forceupdate-feature/market.png"
 ---
 # ForceUpdate Feature
 
+<a target="_blank" href="https://medium.com/dev-genius/forceupdate-feature-e99ab6b031a2">
+<img alt="linkedin" src="/medium.svg"/>
+</a>
+
 Friday. Sunny spring day. There's half an hour left until the end of the workday... The manager bursts into the room and exclaims, "URGENT! The backend deployment has been completed, we need to release the mobile build now!!! So that everything is available to all users by tomorrow!!!" Sounds familiar? I want to discuss that problem - what is the reason and how to treat that sickness.
 
 ## Root cause

@@ -6,6 +6,10 @@ heroImage: "/en/blog/feature-toggle/dev-qa-prod.png"
 ---
 # FeatureToggle recipe for Android
 
+<a target="_blank" href="https://medium.com/star-gazers/featuretoggle-recipe-for-android-dd27b2ee97f9">
+<img alt="linkedin" src="/medium.svg"/>
+</a>
+
 Hello, my name is Ilia, I’m Android Engineer. Almost three years ago, we started [our fintech project](https://play.google.com/store/apps/details?id=net.humans.fintech_uz). MVP deadline was very optimistic. A week before the release, our team realized that no one was going to postpone the start date, and one feature was unlikely to be completed on time. We didn’t want to take risks and it was decided to cover this part with a stub. By blocking part of the non-working functionality, we had hopes that the MVP scope would be closed. We planned to disable non-working code so that at the click of the CI / Web button, the screen became available to the user.
 
 Step by step, our team increased. Many developers didn’t understand what the system was. The guide was required for the in-house team too. For this reason, we decided to create a separate library. But it wasn't enough… And the development process was modified too.

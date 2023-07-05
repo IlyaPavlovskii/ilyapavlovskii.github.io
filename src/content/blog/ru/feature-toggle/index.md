@@ -7,6 +7,10 @@ heroImage: "/ru/blog/feature-toggle/dev-qa-prod.png"
 
 # Готовим FeatureToggle для Android
 
+<a target="_blank" href="https://habr.com/ru/articles/709542/">
+<img alt="linkedin" src="/habr.svg"/>
+</a>
+
 Всем привет, меня зовут Илья, я андроид инженер. Почти три года назад, мы начали свой
 проект [в сфере финтех](https://play.google.com/store/apps/details?id=net.humans.fintech_uz). Срок запуска MVP был
 оптимистичным. За неделю до наступления дедлайна наша команда осознала, что срок запуска переносить никто не собирается,

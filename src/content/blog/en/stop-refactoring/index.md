@@ -13,6 +13,10 @@ heroImage: "/en/blog/stop-refactoring/header.png"
 
 ## Intro
 
+<a target="_blank" href="https://medium.com/star-gazers/stop-refactoring-kotlin-android-581bb05f005">
+<img alt="linkedin" src="/medium.svg"/>
+</a>
+
 <p align="center">
   <img src="header.png" />
 </p>

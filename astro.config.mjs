@@ -7,6 +7,7 @@ export default defineConfig({
   site: 'https://ilyapavlovskii.github.io',
   integrations: [
       mdx(),
+      sitemap(),
       tailwind()
   ]
 });

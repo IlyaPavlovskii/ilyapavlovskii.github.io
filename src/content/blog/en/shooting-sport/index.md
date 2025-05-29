@@ -18,7 +18,7 @@ Everything that is not prohibited is allowed, but there are restrictions. To ent
 
 A shooting range is a static lane. You are standing in a static position, next to a tough instructor, and you shoot at a depth of 10 to 25 meters. The fun is that you have a limited number of bullets from each weapon, and then you check your accuracy. Hit all the bullets in the target - well done, no - loser.
 
-![Untitled](Untitled.png)
+![Untitled](me.png)
 
 If you're not bored and want to try, take a package at shooting ranges. They are not created for nothing - it's like a one-time gym permit. Everything progressively, if it doesn't work out, you'll figure it out in the middle, or tomorrow. If you're still in doubt the next day, you definitely need to go to a dynamic line.
 

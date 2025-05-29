@@ -1,11 +1,9 @@
 ---
 title: "Mobile MVP - minimum viable Features"
-description: " it is a product that is ready to be released to the market with minimal functionality in order to achieve certain goals. These goals can be marketing, attracting new customers, or testing your own PoCs."
+description: "It is a product that is ready to be released to the market with minimal functionality in order to achieve certain goals. These goals can be marketing, attracting new customers, or testing your own PoCs."
 pubDate: "Sep 24 2023"
 heroImage: "/en/blog/mvp/logo.png"
 ---
-# Mobile MVP - minimum viable Features EN
-
 # Primary goals
 
 Hi everyone, my name is Ilia. I am an Android engineer with 10 years of experience. During this time, I have had the opportunity to participate in projects of various types - freelance, large product, outsourcing, and startup. And today I would like to share my thoughts on my favorite type of employment - startups and their MVPs. Specifically, what features your MVP project should have before pressing the Publish button.

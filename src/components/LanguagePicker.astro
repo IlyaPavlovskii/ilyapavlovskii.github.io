@@ -1,0 +1,104 @@
+---
+import { languages } from '../i18n/ui';
+const flags = {
+  pl: "🇵🇱",
+  en: "🇬🇧",
+  ru: "🇷🇺",
+  uk: "🇺🇦"
+};
+const currentLang = Astro.url.pathname.split('/')[1];
+const currentLabel = `${flags[currentLang] || '🌐'} ${languages[currentLang] || 'Язык'}`;
+---
+
+<style>
+.lang-picker {
+  position: relative;
+  display: inline-block;
+}
+.lang-picker-btn {
+  padding: 0.5em 1.2em;
+  border-radius: 0.7em;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  min-width: 100px;
+  font-weight: 500;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.lang-picker-list {
+  display: none;
+  position: absolute;
+  left: 0; top: 110%;
+  min-width: 140px;
+  background: #fff;
+  border-radius: 0.7em;
+  box-shadow: 0 4px 18px rgba(0,0,0,.09);
+  margin-top: 4px;
+  z-index: 10;
+  padding: 0.3em 0;
+}
+.lang-picker-list.open {
+  display: block;
+}
+.lang-picker-list li {
+  list-style: none;
+}
+.lang-picker-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0.7em 1.2em;
+  text-decoration: none;
+  color: #232355;
+  font-weight: 500;
+  border-radius: 0.5em;
+  font-size: 1em;
+  transition: background .14s, color .14s;
+}
+.lang-picker-list a:hover,
+.lang-picker-list a[aria-current] {
+  background: #f2f7ff;
+  color: #2186eb;
+}
+</style>
+
+<div class="lang-picker" id="langPicker">
+  <button class="lang-picker-btn" id="langPickerBtn">
+    <span>{flags[currentLang] || '🌐'}</span>
+    <span>{languages[currentLang] || 'Язык'}</span>
+    <span style="margin-left:0.6em;font-size:0.9em;">▼</span>
+  </button>
+  <ul class="lang-picker-list" id="langPickerList">
+    {Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={`/${lang}/`} aria-current={lang === currentLang ? 'page' : undefined}>
+          <span>{flags[lang] || '🌐'}</span>
+          <span>{label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script type="module">
+  const btn = document.getElementById('langPickerBtn');
+  const list = document.getElementById('langPickerList');
+  const picker = document.getElementById('langPicker');
+  btn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    list.classList.toggle('open');
+  });
+  // Закрытие по клику вне
+  document.addEventListener('click', (e) => {
+    if (!picker.contains(e.target)) {
+      list.classList.remove('open');
+    }
+  });
+  // Закрытие по Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') list.classList.remove('open');
+  });
+</script>

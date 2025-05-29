@@ -1,8 +1,11 @@
 ---
-import i18next, {t} from "i18next";
-import {Trans, HeadHrefLangs} from "astro-i18next/components";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
-<div class="drawer-side bg-base-200" lang={i18next.language}>
+<div class="drawer-side bg-base-200">
     <label for="my-drawer" class="drawer-overlay bg-base-200"></label>
     <div class="menu flex flex-col flex-nowrap p-4 overflow-y-auto w-[21rem] bg-base-200 text-base-content">
         <div class="w-fit">
@@ -16,10 +19,10 @@ import {Trans, HeadHrefLangs} from "astro-i18next/components";
         </div>
         <ul class="grow shrink">
             <!-- Sidebar content here -->
-            <li><a id="home" href="/">{t("side_bar.home")}</a></li>
-            <li><a id="blog" href="/blog/">{t("side_bar.blog")}</a></li>
-            <li><a id="projects" href="/projects/">{t("side_bar.projects")}</a></li>
-            <li><a id="cv" href="/cv">{t("side_bar.cv")}</a></li>
+            <li><a id="home" href={translatePath('/')}>{t("side_bar.home")}</a></li>
+            <li><a id="blog" href={translatePath('/blog/')}>{t("side_bar.blog")}</a></li>
+            <li><a id="projects" href={translatePath('/projects/')}>{t("side_bar.projects")}</a></li>
+            <li><a id="cv" href={translatePath('/cv/')}>{t("side_bar.cv")}</a></li>
             <li><a href="mailto:pavlovskii.ilya@gmail.com">{t("side_bar.contact")}</a></li>
         </ul>
         <div class="social-icons px-4 my-2 flex self-center">

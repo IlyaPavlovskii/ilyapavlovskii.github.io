@@ -3,7 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
-import {LanguageSelector} from "astro-i18next/components";
+//import {LanguageSelector} from "astro-i18next/components";
+import LanguagePicker from '../components/LanguagePicker.astro';
 
 import {SITE_TITLE, SITE_DESCRIPTION} from "../config";
 
@@ -23,7 +24,7 @@ const {image, title = SITE_TITLE, description = SITE_DESCRIPTION} = Astro.props;
         <div class="md:flex md:justify-center">
             <main class="p-6 pt-10 max-w-[900px]">
                 <div style="display: flex; justify-content: flex-end">
-                    <LanguageSelector showFlag={true} class="my-select-class"/>
+                    <LanguagePicker showFlag={true} class="my-select-class"/>
                 </div>
                 <slot/>
             </main>

@@ -9,17 +9,16 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
     </div>
 
     <div class="mb-10 text-justify">
-        Hello, I'm Ilia, an experienced Android Engineer with a decade of expertise in the field.
-        Over the course of my career, I have successfully delivered more than 20 projects,
-        actively contributed to <a style="color: rgb(0,0,255)" href="https://github.com/IlyaPavlovskii">open-source
-        initiatives</a>,
-        and shared my knowledge through tech writing on
-        platforms like <a style="color: rgb(0,0,255)" href="https://habr.com/ru/users/TranE91/">Habr</a> and
+        Hello, I'm Ilia, a Senior Android Engineer with over 10 years of experience building mobile and in-car software systems.
+        I have delivered 20+ Android products across consumer apps, fintech platforms, and Android Automotive navigation systems.
+        I actively contribute to <a style="color: rgb(0,0,255)" href="https://github.com/IlyaPavlovskii">open-source projects</a>
+        and share technical knowledge through articles on
+        <a style="color: rgb(0,0,255)" href="https://habr.com/ru/users/TranE91/">Habr</a> and
         <a style="color: rgb(0,0,255)" href="https://pavlovskiiilia.medium.com/">Medium</a>.
-        </br>
-        My areas of expertise encompass Android architecture, design patterns, and mobile CI/CD.
-        I specialize in product development, with a keen interest in business, finance, psychology,
-        and staying up-to-date with the latest advancements in mobile architecture and trending technologies.
+        <br/><br/>
+        My expertise includes Android architecture, complex system integration, and scalable mobile infrastructure.
+        I work at the intersection of product development and engineering, focusing on reliable systems, efficient delivery pipelines,
+        and modern mobile architecture across consumer and automotive platforms.
     </div>
 
     <div class="mb-5">
@@ -42,13 +41,18 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
                 title="Software Development Engineer II"
                 subtitle="From Dec 2023 - Present, at Mapbox, Warsaw, Poland"
                 companyLink="https://mapbox.com/"
-                desc="Mapbox powers navigation for people, packages, and vehicles everywhere."
+                desc="Mapbox — Location data platform powering navigation, mapping, and spatial analytics for mobile, web, and Android Automotive OS across automotive OEMs, logistics, and consumer applications worldwide"
                 achievements={[
-                    "Core contributor to the Android Automotive (AAOS) navigation app (UXF), working with in-car process lifecycle, vehicle system constraints and VHAL-driven data access",
-                    "Contributed to the public launch of MapGPT — Mapbox’s AI-powered in-car assistant — implementing the Compose UI layer and voice interaction pipeline",
-                    "Introduced AI-assisted unit testing workflows with cross-check validation, reducing time spent on writing routine tests and improving regression detection visibility",
-                    "Implemented a custom layer for processing and normalizing vehicle signals outside of standard AAOS APIs, ensuring stable data delivery to navigation and assistant modules",
-                    "Designed and implemented a cross-process AudioFocus synchronization mechanism to ensure consistent interruption handling between navigation and voice assistant components"
+                    "Engineered the full TTS voice instruction pipeline for turn-by-turn navigation, integrating system TTS services, locale validation, runtime language synchronization, and handling formatting edge cases across CJK and other locales",
+                    "Designed and implemented an IPC command framework for an Android Automotive navigation app, delivering 30+ bidirectional commands for routing, camera control, and waypoint lifecycle management with robust handling of large payloads and concurrent command edge cases",
+                    "Implemented cross-process AudioFocus coordination covering the full audio interruption matrix between navigation guidance, voice assistants, and other in-car audio consumers",
+                    "Designed and delivered a driver distraction mode UI layer compliant with ADAS UX guidelines, restricting map interaction and POI access during active guidance and supported by a simulation tool for emulator and handheld validation",
+                    "Implemented multi-screen navigation support across driver and passenger displays with screen-aware UI state and independent event handling per display",
+                    "Built voice feedback APIs and Compose UI components for the AI assistant, enabling spoken user feedback collection within navigation sessions",
+                    "Led the migration of an in-car AI assistant from multiplatform to native Android, integrating speech recognition (ASR), navigation context, and extracting the UI into a standalone SDK",
+                    "Integrated navigation with an aftermarket L2 ADAS device (openpilot/comma2) via a TCP command protocol supporting cruise control speed commands, autopilot state management, and reconnection logic",
+                    "Contributed to the Android navigation SDK with APIs for routeline styling, worldview rendering, offline tile localisation fallback, headless navigation samples, and maneuver geometry overrides for OEM partners",
+                    "Built a runtime-configurable navigation debug camera system with scenario-based parameters and live state inspection across navigation modes"
                 ]}
         />
         <TimeLineElement
@@ -57,29 +61,47 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
             companyLink="https://www.elinext.com/"
             desc="Worked on Arlo Secure – a large-scale smart home security system with multi-device support and complex delivery pipelines. Focused on improving engineering processes, technical stack modernization, and reducing operational costs."
             achievements={[
-                "Implemented automated multi-channel distribution pipelines (Firebase App Distribution → Google Play Internal/Alpha tracks) for different build flavors and access layers",
-                "Adapted and refactored legacy architecture to support modern delivery formats (AAB/Bundle) and streamlined release process",
-                "Introduced unit testing culture standards and tooling improvements, increasing code reliability and reducing regression issues",
-                "Mentored engineers during Java → Kotlin migration, establishing consistent code standards and improving team onboarding speed"
+                "Implemented automated multi-channel distribution pipelines (Firebase App Distribution → Google Play Internal/Alpha tracks) for different build flavors and access levels",
+                "Refactored legacy architecture to support modern delivery formats (AAB / Android App Bundles) and streamlined the release process",
+                "Introduced unit testing standards and improved tooling, increasing code reliability and reducing regression issues",
+                "Mentored engineers during the Java → Kotlin migration, establishing consistent code standards and improving onboarding efficiency"
             ]}
         />
         <TimeLineElement
-                title="Android Software Engineer"
-                subtitle="Jan 2020 - Jul 2022, Humans Group, Warsaw, Poland"
-                companyLink="https://play.google.com/store/apps/details?id=net.humans.fintech_uz"
-                desc="Humans.uz is a telecom-banking-marketplace platform in Uzbekistan. Technical and resource management. Increasing feature delivery speed: setup decomposition and development process between features(usually 2-4 persons by 1 feature); decrease build time - split technical parts of the application by modules and pack it to the binary storage. As a result increase feature delivery time from 2 months to 3 weeks. The main achievement is the establishment of an accelerated feature delivery process to the user while maintaining efficiency."
+            title="Android Software Engineer"
+            subtitle="Jan 2020 - Jul 2022, Humans Group, Warsaw, Poland"
+            companyLink="https://play.google.com/store/apps/details?id=net.humans.fintech_uz"
+            desc="Humans.uz is a telecom, banking, and marketplace platform in Uzbekistan. Contributed to the Android application architecture and development process while coordinating technical work across feature teams."
+            achievements={[
+                "Established a feature-based development workflow with small cross-functional teams (2–4 engineers per feature)",
+                "Modularized the Android codebase and introduced binary dependency storage to significantly reduce build times",
+                "Introduced a hybrid MVI + MVVM architecture to structure UI state management and feature development",
+                "Implemented backend communication based on GraphQL and helped establish a structured workflow for UI design, mobile business logic, and backend integration",
+                "Accelerated feature delivery from ~2 months to ~3 weeks while maintaining engineering quality and team efficiency"
+            ]}
         />
         <TimeLineElement
-                title="Android Software Engineer"
-                subtitle="Jun 2019 - Jan 2020, at HiQo Solutions, Minsk, Belarus"
-                companyLink="https://hiqo-solutions.com/"
-                desc="HiQo Solutions - is an outsorcing company in technology development for machine learning, Edge IoT systems, cloud and advanced software. My area of responsibility was project management and mentoring of android engineers. Supporting good quality of code, setup CI/CD and improoving the tech processes."
+            title="Android Software Engineer"
+            subtitle="Jun 2019 - Jan 2020, HiQo Solutions, Minsk, Belarus"
+            companyLink="https://hiqo-solutions.com/"
+            desc="HiQo Solutions is a software development company specializing in machine learning, Edge IoT systems, cloud platforms, and advanced software solutions. Contributed to Android projects while supporting engineering processes and team collaboration."
+            achievements={[
+                "Mentored Android engineers and supported project coordination across development teams",
+                "Improved code quality standards and established better engineering practices",
+                "Set up and maintained CI/CD pipelines to streamline development and release workflows"
+            ]}
         />
         <TimeLineElement
-                title="Android Software Engineer"
-                subtitle="Jun 2018 - Jun 2019, at Yandex, Minsk, Belarus"
-                companyLink="https://yandex.com/company/"
-                desc="Yandex Browser. Chromium fork for android mobile application. Development GUI features, work by quotes: bugfix, feature and automation QA. Improve team adaptation process with the transformation from Java to Kotlin as a main project language by formalization and integration kotlin lint rules."
+            title="Android Software Engineer"
+            subtitle="Jun 2018 - Jun 2019, Yandex, Minsk, Belarus"
+            companyLink="https://yandex.com/company/"
+            desc="Worked on Yandex Browser, a Chromium-based Android mobile browser. Contributed to UI features, bug fixing, and test automation while supporting the team's transition from Java to Kotlin."
+            achievements={[
+                "Developed and maintained UI features and fixes in a large Chromium-based Android codebase",
+                "Implemented offline Zen feed prefetching, enabling curated news content to be available without internet connectivity",
+                "Improved engineering workflows by formalizing and integrating Kotlin lint rules during the team’s migration from Java to Kotlin",
+                "Contributed to QA automation and feature delivery within a large-scale browser development team"
+            ]}
         />
         <TimeLineElement
                 title="Android Software Engineer"
@@ -146,7 +168,7 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
     <ul class="list-disc md:columns-5 columns-2 mx-6">
         <li>Russian (Native)</li>
         <li>English (C1)</li>
-        <li>Polish (B1)</li>
+        <li>Polish (C1)</li>
         <li>Android</li>
         <li>Java</li>
         <li>Kotlin</li>

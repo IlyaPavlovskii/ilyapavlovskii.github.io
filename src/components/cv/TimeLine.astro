@@ -1,25 +1,5 @@
 ---
-const {title, subtitle, desc, companyLink, achievements} = Astro.props;
-
-// Parse subtitle to extract date, company, and location
-const parseSubtitle = (subtitle: string) => {
-    if (!subtitle) return { date: '', company: '', location: '' };
-
-    // Example format: "From Dec 2023 - Present, at Mapbox, Warsaw, Poland"
-    // or "Jul 2022 - Dec 2023, at Elinext, Warsaw, Poland"
-    const parts = subtitle.split(', at ');
-    const date = parts[0]?.replace('From ', '').trim() || '';
-    const locationPart = parts[1] || '';
-
-    // Extract company and location
-    const locationMatch = locationPart.match(/^([^,]+),\s*(.+)$/);
-    const company = locationMatch ? locationMatch[1].trim() : locationPart;
-    const location = locationMatch ? locationMatch[2].trim() : '';
-
-    return { date, company, location };
-};
-
-const { date, company, location } = parseSubtitle(subtitle);
+const {title, company, companyLink, date, location, desc, achievements} = Astro.props;
 ---
 
 <div class="flex group">
@@ -78,11 +58,14 @@ const { date, company, location } = parseSubtitle(subtitle);
 
         <!-- Achievements -->
         {achievements && achievements.length > 0 && (
-            <div class="mt-4">
-                <h5 class="text-sm font-semibold text-gray-800 mb-3 uppercase tracking-wide">
-                    Key Achievements
-                </h5>
-                <ul class="space-y-2.5">
+            <details class="mt-4 group/details">
+                <summary class="cursor-pointer list-none flex items-center gap-2 select-none">
+                    <span class="text-sm font-semibold text-gray-800 uppercase tracking-wide">Key Achievements</span>
+                    <svg class="w-4 h-4 text-gray-500 transition-transform duration-200 group-open/details:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </summary>
+                <ul class="mt-3 space-y-2.5">
                     {achievements.map((achievement: string) => (
                         <li class="flex gap-2.5 text-justify">
                             <span class="text-primary mt-1 flex-shrink-0 font-bold">▸</span>
@@ -90,7 +73,7 @@ const { date, company, location } = parseSubtitle(subtitle);
                         </li>
                     ))}
                 </ul>
-            </div>
+            </details>
         )}
     </div>
 </div>

@@ -1,71 +1,108 @@
 ---
-const {title, company, companyLink, date, location, desc, achievements} = Astro.props;
+const {title, company, companyLink, date, location, desc, achievements, color = '#6366f1', icon} = Astro.props;
+
+// Hex -> rgba helper for inline gradient
+const hexToRgba = (hex: string, alpha: number) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+};
+
+const gradientStyle = `background: linear-gradient(135deg, ${hexToRgba(color, 0.12)} 0%, ${hexToRgba(color, 0.04)} 45%, transparent 75%)`;
+const dotBorderStyle = `border-color: ${color}`;
+const accentStyle = `color: ${color}`;
+const chipBgStyle = `background-color: ${hexToRgba(color, 0.1)}; color: ${color}`;
+const summaryHoverStyle = `--hover-color: ${hexToRgba(color, 0.06)}`;
 ---
 
 <div class="flex gap-4 group">
     <!-- Timeline rail -->
     <div class="flex flex-col items-center flex-shrink-0 mt-[22px]">
-        <span class="w-4 h-4 rounded-full border-2 border-primary bg-base-100 flex-shrink-0"></span>
+        <span class="w-4 h-4 rounded-full border-2 bg-base-100 flex-shrink-0" style={dotBorderStyle}></span>
         <span class="education__line w-0.5 bg-base-300 flex-grow mt-1"></span>
     </div>
 
-    <!-- Material card -->
+    <!-- Card -->
     <div class="flex-1 mb-6 rounded-2xl bg-base-100 shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden">
 
-        <!-- Card header -->
-        <div class="px-6 pt-5 pb-4">
-            {company && companyLink ? (
-                <a href={companyLink} target="_blank"
-                   class="inline-block text-xl font-bold text-primary hover:opacity-75 transition-opacity duration-150 mb-1">
-                    {company}
-                </a>
-            ) : company ? (
-                <div class="text-xl font-bold text-primary mb-1">{company}</div>
-            ) : null}
-
-            <div class="text-base font-medium text-base-content/80 mb-3">{title}</div>
-
-            <!-- Chips -->
-            <div class="flex flex-wrap gap-2">
-                {date && (
-                    <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-base-200 text-base-content/70 px-3 py-1 rounded-full">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                        {date}
-                    </span>
+        <!-- Gradient header -->
+        <div class="px-6 pt-5 pb-4" style={gradientStyle}>
+            <div class="flex items-start gap-4">
+                <!-- Company icon -->
+                {icon ? (
+                    <img
+                        src={icon}
+                        alt={company}
+                        width="48"
+                        height="48"
+                        class="w-12 h-12 rounded-xl object-contain flex-shrink-0 bg-white shadow-sm p-0.5"
+                    />
+                ) : (
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl font-bold shadow-sm select-none"
+                         style={`background-color: ${color}`}>
+                        {company?.[0] ?? '?'}
+                    </div>
                 )}
-                {location && (
-                    <span class="inline-flex items-center gap-1.5 text-xs font-medium bg-base-200 text-base-content/70 px-3 py-1 rounded-full">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                        {location}
-                    </span>
-                )}
+
+                <!-- Header text -->
+                <div class="flex-1 min-w-0">
+                    {company && companyLink ? (
+                        <a href={companyLink} target="_blank"
+                           class="inline-block text-xl font-bold hover:opacity-75 transition-opacity duration-150 mb-0.5 leading-tight"
+                           style={accentStyle}>
+                            {company}
+                        </a>
+                    ) : company ? (
+                        <div class="text-xl font-bold mb-0.5 leading-tight" style={accentStyle}>{company}</div>
+                    ) : null}
+
+                    <div class="text-sm font-medium text-base-content/70 mb-3">{title}</div>
+
+                    <!-- Chips -->
+                    <div class="flex flex-wrap gap-2">
+                        {date && (
+                            <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full" style={chipBgStyle}>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                {date}
+                            </span>
+                        )}
+                        {location && (
+                            <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full" style={chipBgStyle}>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                {location}
+                            </span>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Description -->
         {desc && (
-            <div class="px-6 pb-4 text-sm text-base-content/70 leading-relaxed">
+            <div class="px-6 py-4 text-sm text-base-content/70 leading-relaxed border-t border-base-200">
                 {desc}
             </div>
         )}
 
-        <!-- Achievements — Material expansion panel -->
+        <!-- Achievements — expansion panel -->
         {achievements && achievements.length > 0 && (
             <details class="group/exp border-t border-base-200">
-                <summary class="flex items-center justify-between px-6 py-3.5 cursor-pointer select-none
-                                hover:bg-primary/5 active:bg-primary/10 transition-colors duration-150 list-none">
-                    <span class="text-xs font-semibold tracking-widest uppercase text-primary">
+                <summary class="cv-summary flex items-center justify-between px-6 py-3.5 cursor-pointer select-none transition-colors duration-150 list-none"
+                         style={summaryHoverStyle}>
+                    <span class="text-xs font-semibold tracking-widest uppercase" style={accentStyle}>
                         Key Achievements
                     </span>
-                    <svg class="w-4 h-4 text-primary/60 transition-transform duration-200 group-open/exp:rotate-180"
+                    <svg class="w-4 h-4 transition-transform duration-200 group-open/exp:rotate-180"
+                         style={accentStyle}
                          fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
                     </svg>
@@ -73,7 +110,7 @@ const {title, company, companyLink, date, location, desc, achievements} = Astro.
                 <ul class="px-6 pt-2 pb-5 space-y-3">
                     {achievements.map((achievement: string) => (
                         <li class="flex gap-3 text-sm leading-relaxed">
-                            <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 flex-shrink-0"></span>
+                            <span class="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={`background-color: ${color}`}></span>
                             <span class="text-base-content/75" set:html={achievement}></span>
                         </li>
                     ))}
@@ -82,3 +119,9 @@ const {title, company, companyLink, date, location, desc, achievements} = Astro.
         )}
     </div>
 </div>
+
+<style>
+    .cv-summary:hover {
+        background-color: var(--hover-color);
+    }
+</style>

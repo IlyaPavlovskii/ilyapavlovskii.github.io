@@ -60,7 +60,9 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
                     "Led the migration of an in-car AI assistant from multiplatform to native Android, integrating speech recognition (ASR), navigation context, and extracting the UI into a standalone SDK",
                     "Integrated navigation with an aftermarket L2 ADAS device (openpilot/comma2) via a TCP command protocol supporting cruise control speed commands, autopilot state management, and reconnection logic",
                     "Contributed to the Android navigation SDK with APIs for routeline styling, worldview rendering, offline tile localisation fallback, headless navigation samples, and maneuver geometry overrides for OEM partners",
-                    "Built a runtime-configurable navigation debug camera system with scenario-based parameters and live state inspection across navigation modes"
+                    "Built a runtime-configurable navigation debug camera system with scenario-based parameters and live state inspection across navigation modes",
+                    "Profiled and optimized rendering, memory and IPC throughput for resource-constrained automotive head units (low-RAM ARM SoCs), reducing frame drops during active map interaction and tightening cold-start budgets for AAOS targets",
+                    "Mentored junior and mid-level engineers on Jetpack Compose, navigation-SDK integration patterns and IPC design through PR reviews, pairing sessions and authored internal architecture notes that became team baselines for new in-car modules"
                 ]}
         />
         <TimeLineElement
@@ -165,6 +167,61 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
     </div>
 
     <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Personal Projects</div>
+    </div>
+
+    <div class="time-line-container mb-10">
+        <TimeLineElement
+                title="Kotlin Multiplatform · Compose Multiplatform · AI"
+                company="PolishExam — Polski B1"
+                companyLink="https://polishexam.app/"
+                color="#DC143C"
+                icon="/polishexam.png"
+                desc="Exam-prep platform for the Polish B1 language exam: structured lessons, listening tests, grammar and vocabulary drills, AI-powered essay feedback and full mock exams with progress analytics."
+        />
+        <TimeLineElement
+                title="Kotlin Multiplatform · Compose Multiplatform"
+                company="IPSC Hit Factor Calculator"
+                companyLink="https://ipsc-calculator.com/"
+                color="#2E7D32"
+                icon="/ipsc.png"
+                desc="Timer and hit-factor calculator for IPSC practical shooting: stage timing, hits/misses input, division-aware scoring and a personal performance history."
+        />
+        <TimeLineElement
+                title="Kotlin · Jetpack Compose"
+                company="Pickly"
+                companyLink="https://play.google.com/store/apps/details?id=by.bulba.pickly"
+                color="#7B1FA2"
+                icon="/pickly.png"
+                desc="Android randomizer toolkit combining dice, coin flip, number range and a wheel of fortune into a single lightweight app."
+        />
+        <TimeLineElement
+                title="Kotlin · Jetpack Compose"
+                company="Sudostorm"
+                companyLink="https://play.google.com/store/apps/details?id=by.bulba.sudoku"
+                color="#1565C0"
+                icon="/sudostorm.png"
+                desc="Sudoku game with multiple difficulty levels, hints, optional timer and a clean Compose-based UI."
+        />
+        <TimeLineElement
+                title="Kotlin · Jetpack Compose · Media3 / ExoPlayer"
+                company="IPTV Player"
+                companyLink="https://apkpure.com/iptv-player/by.bulba.player.iptv"
+                color="#C62828"
+                icon="/iptv.png"
+                desc="Android media player for live TV and on-demand streams: M3U / M3U8 playlist support, favorites, and cross-device playlist sync."
+        />
+        <TimeLineElement
+                title="Kotlin · Wear OS Watch Face API"
+                company="Elektronika"
+                companyLink="https://play.google.com/store/apps/details?id=by.bulba.watch.elektronika"
+                color="#455A64"
+                icon="/elektronika.png"
+                desc="Android Wear OS watch face replicating the classic Soviet 'Электроника' digital watch — a full refactor of the Google WatchFace sample."
+        />
+    </div>
+
+    <div class="mb-5">
         <div class="text-3xl w-full font-bold">Certifications</div>
     </div>
 
@@ -214,9 +271,19 @@ import TimeLineElement from "../../../components/cv/TimeLine.astro";
         <li>English (C1)</li>
         <li>Polish (C1)</li>
         <li>Android</li>
+        <li>Android Automotive / AAOS</li>
+        <li>Android Auto</li>
         <li>Java</li>
         <li>Kotlin</li>
-        <li>Kotlin KMM</li>
+        <li>Kotlin Multiplatform (KMP)</li>
+        <li>Jetpack Compose</li>
+        <li>Compose Multiplatform</li>
+        <li>Coroutines &amp; Flow</li>
+        <li>Mapbox Maps &amp; Navigation SDK</li>
+        <li>Location / GNSS integration</li>
+        <li>ADAS / driver-distraction UX</li>
+        <li>Mobile performance profiling</li>
+        <li>Clean / MVI / MVVM architecture</li>
         <li>Groovy</li>
         <li>Gradle</li>
         <li>Bash</li>

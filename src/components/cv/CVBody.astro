@@ -1,0 +1,105 @@
+---
+import TimeLineElement from "./TimeLine.astro";
+import DownloadCVButton from "./DownloadCVButton.jsx";
+import type { CVData } from "../../data/cv.types";
+
+const { data } = Astro.props as { data: CVData };
+---
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.headerTitle}</div>
+</div>
+
+<div class="mb-6 text-justify">
+    {
+        data.intro.map((paragraph, i) => (
+            <p class:list={[{ "mt-4": i > 0 }]}>
+                {paragraph.map((seg) =>
+                    typeof seg === "string" ? (
+                        <span>{seg}</span>
+                    ) : (
+                        <a style="color: rgb(0,0,255)" href={seg.href}>{seg.text}</a>
+                    )
+                )}
+            </p>
+        ))
+    }
+</div>
+
+<div class="mb-10 flex flex-wrap gap-2 text-sm">
+    {
+        data.contact.map((c) => (
+            <a
+                href={c.href}
+                target={c.type === "email" ? undefined : "_blank"}
+                rel={c.type === "email" ? undefined : "noopener"}
+                class="inline-flex items-center px-3 py-1.5 rounded-full font-medium hover:shadow-md transition-shadow"
+                style="background-color: #eef2ff; color: #6366f1; border: 1px solid rgba(99,102,241,0.2);"
+            >
+                {c.label}
+            </a>
+        ))
+    }
+</div>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.education}</div>
+</div>
+
+<div class="time-line-container grid gap-4 mb-10">
+    {data.education.map((item) => <TimeLineElement {...item} />)}
+</div>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.experience}</div>
+</div>
+
+<div class="time-line-container mb-10">
+    {data.experience.map((item) => <TimeLineElement {...item} />)}
+</div>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.projects}</div>
+</div>
+
+<div class="time-line-container mb-10">
+    {data.projects.map((item) => <TimeLineElement {...item} />)}
+</div>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.certifications}</div>
+</div>
+
+<ul class="list-disc mx-6 mb-10 grid gap-2">
+    {
+        data.certifications.map((cert) => (
+            <li>
+                {cert.href ? (
+                    <a href={cert.href} target="_blank">{cert.label}</a>
+                ) : (
+                    cert.label
+                )}
+            </li>
+        ))
+    }
+</ul>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.events}</div>
+</div>
+
+<div class="time-line-container mb-10">
+    {data.events.map((item) => <TimeLineElement {...item} />)}
+</div>
+
+<div class="mb-5">
+    <div class="text-3xl w-full font-bold">{data.sectionHeaders.skills}</div>
+</div>
+
+<ul class="list-disc md:columns-5 columns-2 mx-6">
+    {data.skills.map((skill) => <li>{skill}</li>)}
+</ul>
+
+<div class="mt-10 mb-6 flex justify-center print:hidden">
+    <DownloadCVButton data={data} client:load />
+</div>

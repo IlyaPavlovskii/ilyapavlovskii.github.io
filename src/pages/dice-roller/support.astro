@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const supportEmail = "pavlovskii.ilya@gmail.com";
+const subject = encodeURIComponent("Dice Roller — Support request");
+const mailto = `mailto:${supportEmail}?subject=${subject}`;
+---
+<BaseLayout
+        title="Dice Roller — Support"
+        description="Support page for the Dice Roller mobile app. Get help, report bugs, or send feedback."
+>
+    <section class="prose max-w-none">
+        <h1>Dice Roller — Support</h1>
+        <p>
+            Thanks for using <strong>Dice Roller</strong>. If you ran into a problem,
+            have a feature request, or just want to share feedback, you can reach me
+            directly using the contact details below.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+            Email:
+            <a href={mailto}>{supportEmail}</a>
+        </p>
+        <p>
+            When reporting a bug, please include:
+        </p>
+        <ul>
+            <li>App version</li>
+            <li>Device model and OS version</li>
+            <li>Steps to reproduce the issue</li>
+            <li>A screenshot or screen recording, if possible</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+
+        <h3>Does Dice Roller work offline?</h3>
+        <p>Yes. The app runs entirely on your device and does not require an internet connection to roll dice.</p>
+
+        <h3>Does the app collect personal data?</h3>
+        <p>
+            Dice Roller does not require an account and does not collect personally identifiable
+            information. Anonymous crash and usage diagnostics may be collected by the platform
+            (Google Play / App Store) to help improve stability.
+        </p>
+
+        <h3>How do I request a new feature?</h3>
+        <p>
+            Send a short description to
+            <a href={mailto}>{supportEmail}</a>.
+            Feature requests with a clear use case get prioritized.
+        </p>
+
+        <h3>How do I get a refund?</h3>
+        <p>
+            Refunds for paid items or subscriptions are handled by the store you purchased from
+            (Google Play or the App Store). Please follow their official refund process.
+        </p>
+
+        <h2>Response time</h2>
+        <p>
+            I usually reply within a few business days. Thanks for your patience.
+        </p>
+    </section>
+</BaseLayout>

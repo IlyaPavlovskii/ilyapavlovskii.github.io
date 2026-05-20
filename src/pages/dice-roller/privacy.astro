@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const supportEmail = "pavlovskii.ilya@gmail.com";
+const subject = encodeURIComponent("Dice Roller — Privacy request");
+const mailto = `mailto:${supportEmail}?subject=${subject}`;
+const effectiveDate = "May 20, 2026";
+---
+<BaseLayout
+        title="Dice Roller — Privacy Policy"
+        description="Privacy policy for the Dice Roller mobile app: what data is collected, how it is used, and your rights."
+>
+    <section class="prose max-w-none">
+        <h1>Dice Roller — Privacy Policy</h1>
+        <p><em>Effective date: {effectiveDate}</em></p>
+
+        <p>
+            This privacy policy explains what information the <strong>Dice Roller</strong>
+            mobile application ("the app") collects, how it is used, and what choices
+            you have. The app is developed by an independent developer ("we", "us")
+            and is distributed through the Google Play Store and the Apple App Store.
+        </p>
+
+        <h2>Information we collect directly</h2>
+        <p>
+            Dice Roller does not require an account, does not ask you to sign in, and
+            does not directly collect personally identifiable information such as your
+            name, email address, phone number, or precise location. Your roll history
+            and settings are stored locally on your device.
+        </p>
+
+        <h2>Information collected by third-party services</h2>
+        <p>
+            The app uses a small number of third-party services that may collect
+            information automatically. We use this information only in aggregate to
+            keep the app stable, understand how it is used, and to support free
+            distribution through advertising.
+        </p>
+
+        <h3>Google Play Services and crash reporting</h3>
+        <p>
+            When the app crashes or encounters an error, anonymous diagnostic data
+            (such as device model, operating system version, app version, and a stack
+            trace) may be collected by Google Play Services and/or Firebase
+            Crashlytics. This data is used to diagnose and fix problems and does not
+            include personally identifiable information.
+        </p>
+
+        <h3>Firebase Analytics</h3>
+        <p>
+            The app uses Firebase Analytics (a Google service) to collect anonymous
+            usage statistics such as which screens are viewed, which features are
+            used, session length, approximate region, device model, and operating
+            system version. This information is used to understand how the app is
+            used and to prioritize improvements.
+        </p>
+
+        <h3>Google AdMob (advertising)</h3>
+        <p>
+            The app displays advertisements through Google AdMob. AdMob may collect
+            and process data including your device's advertising identifier
+            (Android Advertising ID / Apple IDFA), IP address, coarse location, and
+            interactions with ads in order to deliver and measure advertising. Where
+            required by law (for example, under the EU GDPR or the UK GDPR), the app
+            will ask for your consent before personalized ads are shown. You can
+            change your choice at any time through your device's settings or by
+            contacting us.
+        </p>
+        <p>
+            For details, see the
+            <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google
+                Advertising policies</a>
+            and the
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy
+                Policy</a>.
+        </p>
+
+        <h2>How we use information</h2>
+        <ul>
+            <li>To operate, maintain, and improve the app.</li>
+            <li>To diagnose crashes and fix bugs.</li>
+            <li>To understand which features are used so we can prioritize improvements.</li>
+            <li>To display advertising that helps keep the app free.</li>
+        </ul>
+        <p>
+            We do not sell your personal information, and we do not use the
+            information collected to identify you personally.
+        </p>
+
+        <h2>Permissions</h2>
+        <p>
+            The app may request the following device permissions:
+        </p>
+        <ul>
+            <li>
+                <strong>Internet access</strong> — required to load advertisements,
+                report crashes, and send anonymous analytics.
+            </li>
+            <li>
+                <strong>Vibration</strong> — used to provide haptic feedback when
+                rolling, if your device supports it.
+            </li>
+        </ul>
+        <p>
+            The app does not request access to your contacts, photos, microphone,
+            camera, or precise location.
+        </p>
+
+        <h2>Children's privacy</h2>
+        <p>
+            Dice Roller is suitable for general audiences. The app is not directed at
+            children under the age of 13 (or the equivalent minimum age in your
+            jurisdiction), and we do not knowingly collect personal information from
+            children. If you believe that a child has provided personal information,
+            please contact us so we can take appropriate action.
+        </p>
+
+        <h2>Data retention</h2>
+        <p>
+            Data stored locally on your device (such as roll history and settings)
+            remains there until you clear it or uninstall the app. Aggregated
+            analytics and crash data are retained by the relevant service providers
+            (Google / Firebase) in accordance with their published retention policies.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>
+            Depending on your jurisdiction (for example, the EU/UK under the GDPR or
+            California under the CCPA), you may have the right to:
+        </p>
+        <ul>
+            <li>Request access to the data held about you.</li>
+            <li>Request correction or deletion of that data.</li>
+            <li>Object to or restrict certain processing.</li>
+            <li>Withdraw consent to personalized advertising.</li>
+            <li>Lodge a complaint with your local data protection authority.</li>
+        </ul>
+        <p>
+            To exercise these rights, contact us at
+            <a href={mailto}>{supportEmail}</a>. You can also reset or disable your
+            advertising identifier in your device's privacy settings.
+        </p>
+
+        <h2>Security</h2>
+        <p>
+            We take reasonable technical and organizational measures to protect the
+            limited data we process. No method of electronic transmission or storage
+            is 100% secure, so we cannot guarantee absolute security.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+            We may update this privacy policy from time to time. The updated version
+            will be posted on this page with a new effective date. Material changes
+            will be highlighted in the app or in an app store update note.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+            Questions or requests about this privacy policy can be sent to
+            <a href={mailto}>{supportEmail}</a>.
+        </p>
+    </section>
+</BaseLayout>

@@ -5,6 +5,7 @@ import {
     Text,
     View,
     Link,
+    Image,
     StyleSheet,
     Font,
 } from "@react-pdf/renderer";
@@ -136,23 +137,43 @@ const styles = StyleSheet.create({
         marginBottom: 2,
         marginLeft: 4,
     },
-    skillsWrap: {
+    projectHead: {
         flexDirection: "row",
-        flexWrap: "wrap",
+        alignItems: "center",
+        marginBottom: 2,
+    },
+    projectIcon: {
+        width: 22,
+        height: 22,
+        borderRadius: 4,
+        marginRight: 8,
+        objectFit: "contain",
+    },
+    projectInfo: {
+        flex: 1,
+    },
+    otherProjects: {
+        fontSize: 8.8,
+        color: TEXT,
+        marginTop: 2,
+        marginLeft: 4,
+        lineHeight: 1.4,
+    },
+    otherProjectsLabel: {
+        fontWeight: 700,
+        color: ACCENT,
+    },
+    skillsGroups: {
         marginTop: 2,
     },
-    skillChip: {
-        backgroundColor: "#eef2ff",
-        paddingTop: 2,
-        paddingBottom: 2,
-        paddingLeft: 6,
-        paddingRight: 6,
-        borderRadius: 3,
-        marginRight: 4,
-        marginBottom: 4,
+    skillGroup: {
+        fontSize: 8.8,
+        lineHeight: 1.4,
+        color: TEXT,
+        marginBottom: 3,
     },
-    skillChipText: {
-        fontSize: 8.5,
+    skillGroupLabel: {
+        fontWeight: 700,
         color: ACCENT,
     },
 });
@@ -208,6 +229,32 @@ const TimelineItem = ({ item }) => (
     </View>
 );
 
+const ProjectFull = ({ item }) => (
+    <View style={[styles.item, itemAccent(item.color)]} wrap={false}>
+        <View style={styles.projectHead}>
+            {item.icon ? <Image src={item.icon} style={styles.projectIcon} /> : null}
+            <View style={styles.projectInfo}>
+                {item.company ? (
+                    item.companyLink ? (
+                        <Link
+                            src={item.companyLink}
+                            style={[styles.itemCompany, { color: item.color || ACCENT, textDecoration: "none" }]}
+                        >
+                            {item.company}
+                        </Link>
+                    ) : (
+                        <Text style={[styles.itemCompany, { color: item.color || ACCENT }]}>
+                            {item.company}
+                        </Text>
+                    )
+                ) : null}
+                {item.title && <Text style={styles.itemTitle}>{item.title}</Text>}
+            </View>
+        </View>
+        {item.desc && <Text style={styles.itemDesc}>{item.desc}</Text>}
+    </View>
+);
+
 export default function CVDocument({ data }) {
     return (
         <Document
@@ -260,9 +307,17 @@ export default function CVDocument({ data }) {
                 ))}
 
                 <Text style={styles.sectionHeader}>{data.sectionHeaders.projects}</Text>
-                {data.projects.map((item, i) => (
-                    <TimelineItem key={i} item={item} />
+                {data.projects.slice(0, 2).map((item, i) => (
+                    <ProjectFull key={i} item={item} />
                 ))}
+                {data.projects.length > 2 && (
+                    <Text style={styles.otherProjects}>
+                        <Text style={styles.otherProjectsLabel}>
+                            {data.lang === "ru" ? "Другие проекты: " : "Other projects: "}
+                        </Text>
+                        {data.projects.slice(2).map((p) => p.company).join("  ·  ")}
+                    </Text>
+                )}
 
                 <Text style={styles.sectionHeader}>{data.sectionHeaders.certifications}</Text>
                 <View style={styles.certList}>
@@ -286,11 +341,12 @@ export default function CVDocument({ data }) {
                 ))}
 
                 <Text style={styles.sectionHeader}>{data.sectionHeaders.skills}</Text>
-                <View style={styles.skillsWrap}>
-                    {data.skills.map((s, i) => (
-                        <View key={i} style={styles.skillChip} wrap={false}>
-                            <Text style={styles.skillChipText}>{s}</Text>
-                        </View>
+                <View style={styles.skillsGroups}>
+                    {data.skills.map((group, i) => (
+                        <Text key={i} style={styles.skillGroup}>
+                            <Text style={styles.skillGroupLabel}>{group.label}: </Text>
+                            {group.items.join(", ")}
+                        </Text>
                     ))}
                 </View>
             </Page>

@@ -18,6 +18,11 @@ export interface Certification {
     href?: string;
 }
 
+export interface SkillGroup {
+    label: string;
+    items: string[];
+}
+
 export type ContactLinkType = "github" | "linkedin" | "medium" | "habr" | "email";
 
 export interface ContactLink {
@@ -47,5 +52,5 @@ export interface CVData {
     projects: TimelineItem[];
     certifications: Certification[];
     events: TimelineItem[];
-    skills: string[];
+    skills: SkillGroup[];
 }

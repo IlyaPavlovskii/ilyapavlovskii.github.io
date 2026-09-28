@@ -96,9 +96,15 @@ const { data } = Astro.props as { data: CVData };
     <div class="text-3xl w-full font-bold">{data.sectionHeaders.skills}</div>
 </div>
 
-<ul class="list-disc md:columns-5 columns-2 mx-6">
-    {data.skills.map((skill) => <li>{skill}</li>)}
-</ul>
+<div class="grid gap-2 mx-2 mb-2">
+    {
+        data.skills.map((group) => (
+            <div>
+                <span class="font-bold">{group.label}:</span> {group.items.join(", ")}
+            </div>
+        ))
+    }
+</div>
 
 <div class="mt-10 mb-6 flex justify-center print:hidden">
     <DownloadCVButton data={data} client:load />

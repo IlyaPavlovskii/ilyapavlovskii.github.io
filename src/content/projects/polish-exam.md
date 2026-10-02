@@ -12,4 +12,5 @@ PolishExam.app helps you succeed with structured lessons, audio challenges, gram
 ✅ Progress Tracking – Track your learning journey with detailed analytics and personal insights."
 image: "/polishexam.png"
 link: "https://polishexam.app/"
+order: 1
 ---

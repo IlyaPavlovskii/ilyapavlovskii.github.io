@@ -14,6 +14,7 @@ const projectSchema = z.object({
     description: z.string(),
     image: z.string().optional(),
     link: z.string(),
+    order: z.number().optional(),
 })
 export type ProjectSchema = z.infer<typeof projectSchema>;
 
